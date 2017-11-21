@@ -6,29 +6,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="丹丹的小窝">
-    <title>解决angular4发布部署后刷新出现无法访问的问题 - 丹丹的小窝</title>
+    <title>canvas验证码 - 丹丹的小窝</title>
     <meta name="author" content="LiUhoNgDan">
     
-        <meta name="keywords" content="Angular">
+        <meta name="keywords" content="javascript,canvas">
     
     
         <link rel="icon" href="http://liuhongdan222.github.io/assets/images/header.png">
     
     
-    <meta name="description" content="angular4的项目发布部署到服务器之后，刷新会出现页面无法访问的问题。">
-<meta name="keywords" content="Angular">
+    <meta name="description" content="这是一个用canvas加js写的验证码，可以生成随机颜色的干扰线，你可以改变验证码的颜色，如果你想要将线改成圆点，欢迎修改~">
+<meta name="keywords" content="javascript,canvas">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="解决angular4发布部署后刷新出现无法访问的问题">
-<meta property="og:url" content="http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/index.html">
+<meta property="og:title" content="canvas验证码">
+<meta property="og:url" content="http://liuhongdan222.github.io/2017/11/21/canvas验证码/index.html">
 <meta property="og:site_name" content="丹丹的小窝">
-<meta property="og:description" content="angular4的项目发布部署到服务器之后，刷新会出现页面无法访问的问题。">
+<meta property="og:description" content="这是一个用canvas加js写的验证码，可以生成随机颜色的干扰线，你可以改变验证码的颜色，如果你想要将线改成圆点，欢迎修改~">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:image" content="http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/image-1.png">
-<meta property="og:updated_time" content="2017-11-21T09:36:34.984Z">
+<meta property="og:image" content="http://liuhongdan222.github.io/2017/11/21/canvas验证码/image-1.png">
+<meta property="og:updated_time" content="2017-11-21T09:33:58.582Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="解决angular4发布部署后刷新出现无法访问的问题">
-<meta name="twitter:description" content="angular4的项目发布部署到服务器之后，刷新会出现页面无法访问的问题。">
-<meta name="twitter:image" content="http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/image-1.png">
+<meta name="twitter:title" content="canvas验证码">
+<meta name="twitter:description" content="这是一个用canvas加js写的验证码，可以生成随机颜色的干扰线，你可以改变验证码的颜色，如果你想要将线改成圆点，欢迎修改~">
+<meta name="twitter:image" content="http://liuhongdan222.github.io/2017/11/21/canvas验证码/image-1.png">
     
     
         
@@ -37,8 +37,8 @@
         <meta property="og:image" content="http://liuhongdan222.github.io/assets/images/header.png"/>
     
     
-        <meta property="og:image" content="http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/image-1.png"/>
-        <meta class="swiftype" name="image" data-type="enum" content="http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/image-1.png" />
+        <meta property="og:image" content="http://liuhongdan222.github.io/2017/11/21/canvas验证码/image.png"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://liuhongdan222.github.io/2017/11/21/canvas验证码/image.png" />
     
     
     
@@ -191,12 +191,12 @@
         <div class="post-header main-content-wrap text-center">
     
         <h1 class="post-title" itemprop="headline">
-            解决angular4发布部署后刷新出现无法访问的问题
+            canvas验证码
         </h1>
     
     
         <div class="post-meta">
-    <time itemprop="datePublished" datetime="2017-11-21T17:36:34+08:00">
+    <time itemprop="datePublished" datetime="2017-11-21T17:33:58+08:00">
 	
 		    11月 21, 2017
     	
@@ -204,7 +204,7 @@
     
         <span>发布在 </span>
         
-    <a class="category-link" href="/categories/Angular/">Angular</a>
+    <a class="category-link" href="/categories/javascript/">javascript</a>
 
 
     
@@ -215,10 +215,10 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <!-- excerpt --></p>
-<h2 id="出现的问题"><a href="#出现的问题" class="headerlink" title="出现的问题"></a>出现的问题</h2><p>访问一个页面之后，刷新就会出现以下问题：<br><img src="image-1.png" alt=""></p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>在app.module.ts文件下修改读取url的策略，更改为使用Hash策略(HashLocationStrategy)，之前使用的是HTML5策略(PathLocationStrategy)，所以不行。</p>
-<figure class="codeblock codeblock--tabbed"><figcaption><span>app.module.ts</span><ul class="tabs"><li class="tab active">ts</li></ul></figcaption><div class="tabs-content"><figure class="highlight ts" style="display: block;"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> {LocationStrategy, HashLocationStrategy} <span class="keyword">from</span> <span class="string">'@angular/common'</span>;</span><br><span class="line"></span><br><span class="line">providers: [</span><br><span class="line">    { provide: LocationStrategy, useClass: HashLocationStrategy }</span><br><span class="line">  ]</span><br></pre></td></tr></tbody></table></figure></div></figure>
+            <p>这是一个用canvas加js写的验证码，可以生成随机颜色的干扰线，你可以改变验证码的颜色，如果你想要将线改成圆点，欢迎修改~<br><a id="more"></a></p>
+<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图:"></a>效果图:</h2><p>什么都不说了，先上效果图，有图才有真相。<br><img src="image-1.png" alt=""></p>
+<h2 id="html代码"><a href="#html代码" class="headerlink" title="html代码:"></a>html代码:</h2><p>canvas必须要设置他的高宽。<br><figure class="codeblock codeblock--tabbed"><figcaption><span>html</span><ul class="tabs"><li class="tab active">html</li></ul></figcaption><div class="tabs-content"><figure class="highlight html" style="display: block;"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"checkCode"</span> <span class="attr">width</span>=<span class="string">"70"</span> <span class="attr">height</span>=<span class="string">"35"</span> <span class="attr">onclick</span>=<span class="string">"clickChange()"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure></div></figure></p>
+<h2 id="js代码："><a href="#js代码：" class="headerlink" title="js代码："></a>js代码：</h2><figure class="codeblock codeblock--tabbed"><figcaption><span>js</span><ul class="tabs"><li class="tab active">js</li></ul></figcaption><div class="tabs-content"><figure class="highlight js" style="display: block;"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">    clickChange();</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> code ; <span class="comment">//在全局定义验证码</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createCode</span>(<span class="params"></span>)</span>{</span><br><span class="line">    code = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">var</span> codeLength = <span class="number">4</span>;<span class="comment">//验证码的长度</span></span><br><span class="line">    <span class="keyword">var</span> checkCode = <span class="built_in">document</span>.getElementById(<span class="string">'checkCode'</span>);</span><br><span class="line">    <span class="keyword">var</span> random = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>,</span><br><span class="line">        <span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'d'</span>,<span class="string">'e'</span>,<span class="string">'f'</span>,<span class="string">'g'</span>,<span class="string">'h'</span>,<span class="string">'i'</span>,<span class="string">'j'</span>,<span class="string">'k'</span>,<span class="string">'l'</span>,<span class="string">'m'</span>,</span><br><span class="line">        <span class="string">'n'</span>,<span class="string">'o'</span>,<span class="string">'p'</span>,<span class="string">'q'</span>,<span class="string">'r'</span>,<span class="string">'s'</span>,<span class="string">'t'</span>,<span class="string">'u'</span>,<span class="string">'v'</span>,<span class="string">'w'</span>,<span class="string">'x'</span>,<span class="string">'y'</span>,<span class="string">'z'</span>,</span><br><span class="line">        <span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>, <span class="string">'D'</span>, <span class="string">'E'</span>, <span class="string">'F'</span>, <span class="string">'G'</span>, <span class="string">'H'</span>, <span class="string">'I'</span>, <span class="string">'J'</span>, <span class="string">'K'</span>,</span><br><span class="line">        <span class="string">'L'</span>, <span class="string">'M'</span>, <span class="string">'N'</span>, <span class="string">'O'</span>, <span class="string">'P'</span>, <span class="string">'Q'</span>, <span class="string">'R'</span>, <span class="string">'S'</span>, <span class="string">'T'</span>, <span class="string">'U'</span>, <span class="string">'V'</span>,</span><br><span class="line">        <span class="string">'W'</span>, <span class="string">'X'</span>, <span class="string">'Y'</span>, <span class="string">'Z'</span>);  <span class="comment">//所有候选组成验证码的字符，当然也可以用中文的</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; codeLength; i++) { <span class="comment">//循环操作</span></span><br><span class="line">        <span class="keyword">var</span> index = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*<span class="number">52</span>); <span class="comment">//取得随机数的索引（0~51）</span></span><br><span class="line">        code += random[index]; <span class="comment">//根据索引取得随机数加到code上</span></span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> code;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">/*干扰线的随机x坐标值*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">lineX</span>(<span class="params"></span>)</span>{</span><br><span class="line">    <span class="keyword">var</span> ranLineX=<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*<span class="number">70</span>);</span><br><span class="line">    <span class="keyword">return</span> ranLineX;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">/*干扰线的随机y坐标值*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">lineY</span>(<span class="params"></span>)</span>{</span><br><span class="line">    <span class="keyword">var</span> ranLineY=<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*<span class="number">35</span>);</span><br><span class="line">    <span class="keyword">return</span> ranLineY;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// 生成随机颜色</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">rgb</span>(<span class="params"></span>)</span>{</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span>  <span class="string">'#'</span> +</span><br><span class="line">    (<span class="function"><span class="keyword">function</span>(<span class="params">color</span>)</span>{</span><br><span class="line">    <span class="keyword">return</span> (color +=  <span class="string">'0123456789abcdef'</span>[<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*<span class="number">16</span>)])</span><br><span class="line">      &amp;&amp; (color.length == <span class="number">6</span>) ?  color : <span class="built_in">arguments</span>.callee(color);</span><br><span class="line">  })(<span class="string">''</span>);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clickChange</span>(<span class="params"></span>)</span>{</span><br><span class="line">    <span class="keyword">var</span> mycanvas=<span class="built_in">document</span>.getElementById(<span class="string">'checkCode'</span>);</span><br><span class="line">    <span class="keyword">var</span> cxt=mycanvas.getContext(<span class="string">'2d'</span>);</span><br><span class="line">    cxt.fillStyle=<span class="string">'#cbc7c6'</span>;</span><br><span class="line">    cxt.fillRect(<span class="number">0</span>,<span class="number">0</span>,<span class="number">70</span>,<span class="number">35</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*生成干扰线20条*/</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">0</span>;j&lt;<span class="number">20</span>;j++){</span><br><span class="line">        cxt.strokeStyle=rgb();</span><br><span class="line">        cxt.beginPath();    <span class="comment">//若省略beginPath，则每点击一次验证码会累积干扰线的条数</span></span><br><span class="line">        cxt.moveTo(lineX(),lineY());</span><br><span class="line">        cxt.lineTo(lineX(),lineY());</span><br><span class="line">        cxt.lineWidth=<span class="number">0.5</span>;</span><br><span class="line">        cxt.closePath();</span><br><span class="line">        cxt.stroke();</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    cxt.fillStyle=<span class="string">'#6271a9'</span>;</span><br><span class="line">    cxt.font=<span class="string">'bold 20px Arial'</span>;</span><br><span class="line">    cxt.fillText(createCode(),<span class="number">5</span>,<span class="number">25</span>);   <span class="comment">//把rand()生成的随机数文本填充到canvas中</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></div></figure>
             
         </div>
     </div>
@@ -227,7 +227,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">标签</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/Angular/">Angular</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/canvas/">canvas</a> <a class="tag tag--primary tag--small t-link" href="/tags/javascript/">javascript</a>
 
             </div>
         
@@ -237,7 +237,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/11/21/字符串的'false'转化为布尔值的false/"  data-tooltip="字符串的&#39;false&#39;转化为布尔值的false">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/"  data-tooltip="解决angular4发布部署后刷新出现无法访问的问题">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -245,7 +245,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/11/21/canvas验证码/" data-tooltip="canvas验证码">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -263,7 +263,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/">
+                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://liuhongdan222.github.io/2017/11/21/canvas验证码/">
                     <i class="fa fa-weibo"></i>
                 </a>
             </li>
@@ -271,7 +271,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/&amp;title=解决angular4发布部署后刷新出现无法访问的问题">
+                <a class="post-action-btn btn btn--default" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://liuhongdan222.github.io/2017/11/21/canvas验证码/&amp;title=canvas验证码">
                     <i class="fa fa-qq"></i>
                 </a>
             </li>
@@ -279,7 +279,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/">
+                <a class="post-action-btn btn btn--default" target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://liuhongdan222.github.io/2017/11/21/canvas验证码/">
                     <i class="fa fa-star"></i>
                 </a>
             </li>
@@ -317,7 +317,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/11/21/字符串的'false'转化为布尔值的false/"  data-tooltip="字符串的&#39;false&#39;转化为布尔值的false">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/"  data-tooltip="解决angular4发布部署后刷新出现无法访问的问题">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -325,7 +325,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/11/21/canvas验证码/" data-tooltip="canvas验证码">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -343,7 +343,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/">
+                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://liuhongdan222.github.io/2017/11/21/canvas验证码/">
                     <i class="fa fa-weibo"></i>
                 </a>
             </li>
@@ -351,7 +351,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/&amp;title=解决angular4发布部署后刷新出现无法访问的问题">
+                <a class="post-action-btn btn btn--default" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://liuhongdan222.github.io/2017/11/21/canvas验证码/&amp;title=canvas验证码">
                     <i class="fa fa-qq"></i>
                 </a>
             </li>
@@ -359,7 +359,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/">
+                <a class="post-action-btn btn btn--default" target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://liuhongdan222.github.io/2017/11/21/canvas验证码/">
                     <i class="fa fa-star"></i>
                 </a>
             </li>
@@ -384,7 +384,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/">
+                <a class="share-option-btn" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://liuhongdan222.github.io/2017/11/21/canvas验证码/">
                     <i class="fa fa-weibo"></i><span>分享到 Weibo</span>
                 </a>
             </li>
@@ -392,7 +392,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/&amp;title=解决angular4发布部署后刷新出现无法访问的问题">
+                <a class="share-option-btn" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://liuhongdan222.github.io/2017/11/21/canvas验证码/&amp;title=canvas验证码">
                     <i class="fa fa-qq"></i><span>分享到 QQ</span>
                 </a>
             </li>
@@ -400,7 +400,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/">
+                <a class="share-option-btn" target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://liuhongdan222.github.io/2017/11/21/canvas验证码/">
                     <i class="fa fa-star"></i><span>分享到 Qzone</span>
                 </a>
             </li>
