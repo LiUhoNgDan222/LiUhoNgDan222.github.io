@@ -6,33 +6,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="丹丹的小窝">
-    <title>Angular4怎么确保渲染模板时已经取到异步数据呢? - 丹丹的小窝</title>
+    <title>在angular4中使用canvas - 丹丹的小窝</title>
     <meta name="author" content="LiUhoNgDan">
     
-        <meta name="keywords" content="Angular">
+        <meta name="keywords" content="Angular,canvas">
     
     
         <link rel="icon" href="http://liuhongdan222.github.io/assets/images/header.png">
     
     
-    <meta name="description" content="在Angular4里，从服务器请求数据并将数据绑定到页面时会报错。">
-<meta name="keywords" content="Angular">
+    <meta name="description" content="前几天直接写了用js使用canvas写验证码，今天将教大家怎么在angular4里面使用canvas.">
+<meta name="keywords" content="Angular,canvas">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Angular4怎么确保渲染模板时已经取到异步数据呢?">
-<meta property="og:url" content="http://liuhongdan222.github.io/2017/11/22/Angular4怎么确保渲染模板时已经取到异步数据呢/index.html">
+<meta property="og:title" content="在angular4中使用canvas">
+<meta property="og:url" content="http://liuhongdan222.github.io/2017/11/24/在angular4中使用canvas/index.html">
 <meta property="og:site_name" content="丹丹的小窝">
-<meta property="og:description" content="在Angular4里，从服务器请求数据并将数据绑定到页面时会报错。">
+<meta property="og:description" content="前几天直接写了用js使用canvas写验证码，今天将教大家怎么在angular4里面使用canvas.">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:image" content="http://liuhongdan222.github.io/2017/11/22/Angular4怎么确保渲染模板时已经取到异步数据呢/image-1.png">
-<meta property="og:image" content="http://liuhongdan222.github.io/2017/11/22/Angular4怎么确保渲染模板时已经取到异步数据呢/image-2.png">
-<meta property="og:image" content="http://liuhongdan222.github.io/2017/11/22/Angular4怎么确保渲染模板时已经取到异步数据呢/image-3.png">
-<meta property="og:image" content="http://liuhongdan222.github.io/2017/11/22/Angular4怎么确保渲染模板时已经取到异步数据呢/image-4.png">
-<meta property="og:image" content="http://liuhongdan222.github.io/2017/11/22/Angular4怎么确保渲染模板时已经取到异步数据呢/image-5.png">
-<meta property="og:updated_time" content="2017-11-22T03:35:45.920Z">
+<meta property="og:updated_time" content="2017-11-24T09:43:17.317Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Angular4怎么确保渲染模板时已经取到异步数据呢?">
-<meta name="twitter:description" content="在Angular4里，从服务器请求数据并将数据绑定到页面时会报错。">
-<meta name="twitter:image" content="http://liuhongdan222.github.io/2017/11/22/Angular4怎么确保渲染模板时已经取到异步数据呢/image-1.png">
+<meta name="twitter:title" content="在angular4中使用canvas">
+<meta name="twitter:description" content="前几天直接写了用js使用canvas写验证码，今天将教大家怎么在angular4里面使用canvas.">
     
     
         
@@ -41,8 +35,8 @@
         <meta property="og:image" content="http://liuhongdan222.github.io/assets/images/header.png"/>
     
     
-        <meta property="og:image" content="http://liuhongdan222.github.io/2017/11/22/Angular4怎么确保渲染模板时已经取到异步数据呢/image-1.png"/>
-        <meta class="swiftype" name="image" data-type="enum" content="http://liuhongdan222.github.io/2017/11/22/Angular4怎么确保渲染模板时已经取到异步数据呢/image-1.png" />
+        <meta property="og:image" content="http://liuhongdan222.github.io/2017/11/24/在angular4中使用canvas/image.png"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://liuhongdan222.github.io/2017/11/24/在angular4中使用canvas/image.png" />
     
     
     
@@ -204,14 +198,14 @@
         <div class="post-header main-content-wrap text-center">
     
         <h1 class="post-title" itemprop="headline">
-            Angular4怎么确保渲染模板时已经取到异步数据呢?
+            在angular4中使用canvas
         </h1>
     
     
         <div class="post-meta">
-    <time itemprop="datePublished" datetime="2017-11-22T11:35:45+08:00">
+    <time itemprop="datePublished" datetime="2017-11-24T17:43:17+08:00">
 	
-		    11月 22, 2017
+		    11月 24, 2017
     	
     </time>
     
@@ -228,22 +222,12 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <!-- excerpt --></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h2><p>// 请求数据</p>
-<p><img src="image-1.png" alt=""></p>
-<p>// 绑定数据</p>
-<p><img src="image-2.png" alt=""></p>
-<p>// 报错</p>
-<p><img src="image-3.png" alt=""></p>
-<blockquote>
-<p>在进行数据绑定的时候会出现这个错误。但是数据还是会显示在页面上。<br>console.log()数据的时候，数据也是有的。后来发现报这个错是在console.log()前面。</p>
-</blockquote>
-<p><img src="image-4.png" alt=""></p>
-<blockquote>
-<p>所以应该是当我们异步请求数据的时候，数据还没请求到就去渲染数据了，所以他会报错。</p>
-</blockquote>
-<h2 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h2><p><img src="image-5.png" alt=""></p>
-<p>加上？表示这个是可选的，就是可以没有，所以就不会报错了。</p>
+            <!-- excerpt --><br>当你想在Angular中使用Canvas时，你可以做的是在组件内部创建一个，然后从该组件的生命周期钩子和事件处理程序中进行绘制。</p>
+<h3 id="1、引入canvas"><a href="#1、引入canvas" class="headerlink" title="1、引入canvas"></a>1、引入canvas</h3><p>首先需要引入一个canvas元素，我们可以在组件的模板中进行操作。我们还将一个引用变量附加到元素，以便我们能够从组件类中引用它：</p>
+<figure class="codeblock codeblock--tabbed"><figcaption><span>login.component.html</span><ul class="tabs"><li class="tab active">html</li></ul></figcaption><div class="tabs-content"><figure class="highlight html" style="display: block;"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> #<span class="attr">checkCode</span> <span class="attr">width</span>=<span class="string">"80"</span> <span class="attr">height</span>=<span class="string">"35"</span> <span class="attr">class</span>=<span class="string">"checkCode"</span> (<span class="attr">click</span>)=<span class="string">"clickChange()"</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure></div></figure>
+<h3 id="2、在组件类中获取canvas"><a href="#2、在组件类中获取canvas" class="headerlink" title="2、在组件类中获取canvas"></a>2、在组件类中获取canvas</h3><p>在组件类中，我们可以使用@ViewChild()装饰器向画布注入引用。组件初始化后，我们就可以访问Canvas DOM节点以及其绘图上下文：</p>
+<figure class="codeblock codeblock--tabbed"><figcaption><span>login.component.ts</span><ul class="tabs"><li class="tab active">ts</li></ul></figcaption><div class="tabs-content"><figure class="highlight ts" style="display: block;"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> LoginComponent <span class="keyword">implements</span> OnInit {</span><br><span class="line">  <span class="meta">@ViewChild</span>(<span class="string">'checkCode'</span>) canvasRef: ElementRef;</span><br><span class="line">  <span class="keyword">public</span> code: <span class="built_in">any</span>; <span class="comment">// 验证码</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></div></figure>
+<h3 id="3、在生命钩子函数中绘制图形"><a href="#3、在生命钩子函数中绘制图形" class="headerlink" title="3、在生命钩子函数中绘制图形"></a>3、在生命钩子函数中绘制图形</h3><figure class="codeblock codeblock--tabbed"><figcaption><span>login.component.ts</span><ul class="tabs"><li class="tab active">ts</li></ul></figcaption><div class="tabs-content"><figure class="highlight ts" style="display: block;"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">ngOnInit() {</span><br><span class="line">    <span class="keyword">this</span>.clickChange();</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建随机码</span></span><br><span class="line"><span class="keyword">public</span> createCode() {</span><br><span class="line">    <span class="keyword">this</span>.code = <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">const</span> codeLength = <span class="number">4</span>;  <span class="comment">// 验证码的长度</span></span><br><span class="line">    <span class="keyword">const</span> random = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>,</span><br><span class="line">      <span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>, <span class="string">'g'</span>, <span class="string">'h'</span>, <span class="string">'i'</span>, <span class="string">'j'</span>, <span class="string">'k'</span>, <span class="string">'l'</span>, <span class="string">'m'</span>, <span class="string">'n'</span>, <span class="string">'o'</span>, <span class="string">'p'</span>, <span class="string">'q'</span>, <span class="string">'r'</span>, <span class="string">'s'</span>, <span class="string">'t'</span>, <span class="string">'u'</span>, <span class="string">'v'</span>, <span class="string">'w'</span>, <span class="string">'x'</span>, <span class="string">'y'</span>, <span class="string">'z'</span>,</span><br><span class="line">      <span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>, <span class="string">'D'</span>, <span class="string">'E'</span>, <span class="string">'F'</span>, <span class="string">'G'</span>, <span class="string">'H'</span>, <span class="string">'I'</span>, <span class="string">'J'</span>, <span class="string">'K'</span>, <span class="string">'L'</span>, <span class="string">'M'</span>, <span class="string">'N'</span>, <span class="string">'O'</span>, <span class="string">'P'</span>, <span class="string">'Q'</span>, <span class="string">'R'</span>, <span class="string">'S'</span>, <span class="string">'T'</span>, <span class="string">'U'</span>, <span class="string">'V'</span>, <span class="string">'W'</span>, <span class="string">'X'</span>, <span class="string">'Y'</span>, <span class="string">'Z'</span>]; <span class="comment">// 所有候选组成验证码的字符，当然也可以用中文的</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; codeLength; i++) { <span class="comment">// 循环操作</span></span><br><span class="line">      <span class="keyword">const</span> index = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">52</span>); <span class="comment">// 取得随机数的索引（0~51）</span></span><br><span class="line">      <span class="keyword">this</span>.code += random[index]; <span class="comment">// 根据索引取得随机数加到code上</span></span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.code;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">/*干扰线的随机x坐标值*/</span></span><br><span class="line"><span class="keyword">public</span> lineX() {</span><br><span class="line">    <span class="keyword">const</span> ranLineX = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">80</span>);</span><br><span class="line">    <span class="keyword">return</span> ranLineX;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">/*干扰线的随机y坐标值*/</span></span><br><span class="line"><span class="keyword">public</span> lineY() {</span><br><span class="line">    <span class="keyword">const</span> ranLineY = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">35</span>);</span><br><span class="line">    <span class="keyword">return</span> ranLineY;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// 生成随机颜色</span></span><br><span class="line"><span class="keyword">public</span> rgb() {</span><br><span class="line">    <span class="comment">// 因为在angular4里面不能使用arguments，所以换了一种方法。</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'#'</span> + <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">16777215</span>).toString(<span class="number">16</span>);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> clickChange() {</span><br><span class="line">    <span class="comment">// * 注意：这里跟js不一样！！！</span></span><br><span class="line">    <span class="keyword">const</span> cxt: CanvasRenderingContext2D = <span class="keyword">this</span>.canvasRef.nativeElement.getContext(<span class="string">'2d'</span>);</span><br><span class="line">    cxt.fillStyle = <span class="string">'#fff'</span>;</span><br><span class="line">    cxt.fillRect(<span class="number">0</span>, <span class="number">0</span>, <span class="number">80</span>, <span class="number">35</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*生成干扰线20条*/</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; <span class="number">20</span>; j++) {</span><br><span class="line">      cxt.strokeStyle = <span class="keyword">this</span>.rgb();</span><br><span class="line">      cxt.beginPath();    <span class="comment">// 若省略beginPath，则每点击一次验证码会累积干扰线的条数</span></span><br><span class="line">      cxt.moveTo(<span class="keyword">this</span>.lineX(), <span class="keyword">this</span>.lineY());</span><br><span class="line">      cxt.lineTo(<span class="keyword">this</span>.lineX(), <span class="keyword">this</span>.lineY());</span><br><span class="line">      cxt.lineWidth = <span class="number">0.5</span>;</span><br><span class="line">      cxt.closePath();</span><br><span class="line">      cxt.stroke();</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    cxt.fillStyle = <span class="string">'#6271a9'</span>;</span><br><span class="line">    cxt.font = <span class="string">'bold 20px Arial'</span>;</span><br><span class="line">    cxt.fillText(<span class="keyword">this</span>.createCode(), <span class="number">15</span>, <span class="number">25</span>);   <span class="comment">// 把rand()生成的随机数文本填充到canvas中</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></div></figure>
             
         </div>
     </div>
@@ -252,7 +236,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">标签</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/Angular/">Angular</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/Angular/">Angular</a> <a class="tag tag--primary tag--small t-link" href="/tags/canvas/">canvas</a>
 
             </div>
         
@@ -262,7 +246,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/11/24/在angular4中使用canvas/"  data-tooltip="在angular4中使用canvas">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -270,7 +254,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/11/21/字符串的'false'转化为布尔值的false/" data-tooltip="字符串的&#39;false&#39;转化为布尔值的false">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/11/22/Angular4怎么确保渲染模板时已经取到异步数据呢/" data-tooltip="Angular4怎么确保渲染模板时已经取到异步数据呢?">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -288,7 +272,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://liuhongdan222.github.io/2017/11/22/Angular4怎么确保渲染模板时已经取到异步数据呢/">
+                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://liuhongdan222.github.io/2017/11/24/在angular4中使用canvas/">
                     <i class="fa fa-weibo"></i>
                 </a>
             </li>
@@ -296,7 +280,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://liuhongdan222.github.io/2017/11/22/Angular4怎么确保渲染模板时已经取到异步数据呢/&amp;title=Angular4怎么确保渲染模板时已经取到异步数据呢?">
+                <a class="post-action-btn btn btn--default" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://liuhongdan222.github.io/2017/11/24/在angular4中使用canvas/&amp;title=在angular4中使用canvas">
                     <i class="fa fa-qq"></i>
                 </a>
             </li>
@@ -304,7 +288,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://liuhongdan222.github.io/2017/11/22/Angular4怎么确保渲染模板时已经取到异步数据呢/">
+                <a class="post-action-btn btn btn--default" target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://liuhongdan222.github.io/2017/11/24/在angular4中使用canvas/">
                     <i class="fa fa-star"></i>
                 </a>
             </li>
@@ -342,7 +326,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/11/24/在angular4中使用canvas/"  data-tooltip="在angular4中使用canvas">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -350,7 +334,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/11/21/字符串的'false'转化为布尔值的false/" data-tooltip="字符串的&#39;false&#39;转化为布尔值的false">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/11/22/Angular4怎么确保渲染模板时已经取到异步数据呢/" data-tooltip="Angular4怎么确保渲染模板时已经取到异步数据呢?">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -368,7 +352,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://liuhongdan222.github.io/2017/11/22/Angular4怎么确保渲染模板时已经取到异步数据呢/">
+                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://liuhongdan222.github.io/2017/11/24/在angular4中使用canvas/">
                     <i class="fa fa-weibo"></i>
                 </a>
             </li>
@@ -376,7 +360,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://liuhongdan222.github.io/2017/11/22/Angular4怎么确保渲染模板时已经取到异步数据呢/&amp;title=Angular4怎么确保渲染模板时已经取到异步数据呢?">
+                <a class="post-action-btn btn btn--default" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://liuhongdan222.github.io/2017/11/24/在angular4中使用canvas/&amp;title=在angular4中使用canvas">
                     <i class="fa fa-qq"></i>
                 </a>
             </li>
@@ -384,7 +368,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://liuhongdan222.github.io/2017/11/22/Angular4怎么确保渲染模板时已经取到异步数据呢/">
+                <a class="post-action-btn btn btn--default" target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://liuhongdan222.github.io/2017/11/24/在angular4中使用canvas/">
                     <i class="fa fa-star"></i>
                 </a>
             </li>
@@ -409,7 +393,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://liuhongdan222.github.io/2017/11/22/Angular4怎么确保渲染模板时已经取到异步数据呢/">
+                <a class="share-option-btn" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://liuhongdan222.github.io/2017/11/24/在angular4中使用canvas/">
                     <i class="fa fa-weibo"></i><span>分享到 Weibo</span>
                 </a>
             </li>
@@ -417,7 +401,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://liuhongdan222.github.io/2017/11/22/Angular4怎么确保渲染模板时已经取到异步数据呢/&amp;title=Angular4怎么确保渲染模板时已经取到异步数据呢?">
+                <a class="share-option-btn" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://liuhongdan222.github.io/2017/11/24/在angular4中使用canvas/&amp;title=在angular4中使用canvas">
                     <i class="fa fa-qq"></i><span>分享到 QQ</span>
                 </a>
             </li>
@@ -425,7 +409,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://liuhongdan222.github.io/2017/11/22/Angular4怎么确保渲染模板时已经取到异步数据呢/">
+                <a class="share-option-btn" target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://liuhongdan222.github.io/2017/11/24/在angular4中使用canvas/">
                     <i class="fa fa-star"></i><span>分享到 Qzone</span>
                 </a>
             </li>
