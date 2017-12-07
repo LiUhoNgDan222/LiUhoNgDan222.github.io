@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="丹丹的小窝">
-    <title>解决angular4发布部署后刷新出现无法访问的问题 - 丹丹的小窝</title>
+    <title>在angular4中实现将图片转成base64 - 丹丹的小窝</title>
     <meta name="author" content="LiUhoNgDan">
     
         <meta name="keywords" content="Angular">
@@ -15,20 +15,20 @@
         <link rel="icon" href="http://liuhongdan222.github.io/assets/images/header.png">
     
     
-    <meta name="description" content="angular4的项目发布部署到服务器之后，刷新会出现页面无法访问的问题。">
+    <meta name="description" content="在做项目的时候我们需要从本地选择图片，并将图片显示，这次我就教用angular4怎么来实现。">
 <meta name="keywords" content="Angular">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="解决angular4发布部署后刷新出现无法访问的问题">
-<meta property="og:url" content="http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/index.html">
+<meta property="og:title" content="在angular4中实现将图片转成base64">
+<meta property="og:url" content="http://liuhongdan222.github.io/2017/12/07/在angular4实现将图片转成base64/index.html">
 <meta property="og:site_name" content="丹丹的小窝">
-<meta property="og:description" content="angular4的项目发布部署到服务器之后，刷新会出现页面无法访问的问题。">
+<meta property="og:description" content="在做项目的时候我们需要从本地选择图片，并将图片显示，这次我就教用angular4怎么来实现。">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:image" content="http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/image-1.png">
-<meta property="og:updated_time" content="2017-11-21T09:36:34.984Z">
+<meta property="og:image" content="http://liuhongdan222.github.io/2017/12/07/在angular4实现将图片转成base64/image-1.png">
+<meta property="og:updated_time" content="2017-12-07T07:44:13.223Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="解决angular4发布部署后刷新出现无法访问的问题">
-<meta name="twitter:description" content="angular4的项目发布部署到服务器之后，刷新会出现页面无法访问的问题。">
-<meta name="twitter:image" content="http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/image-1.png">
+<meta name="twitter:title" content="在angular4中实现将图片转成base64">
+<meta name="twitter:description" content="在做项目的时候我们需要从本地选择图片，并将图片显示，这次我就教用angular4怎么来实现。">
+<meta name="twitter:image" content="http://liuhongdan222.github.io/2017/12/07/在angular4实现将图片转成base64/image-1.png">
     
     
         
@@ -37,8 +37,8 @@
         <meta property="og:image" content="http://liuhongdan222.github.io/assets/images/header.png"/>
     
     
-        <meta property="og:image" content="http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/image-1.png"/>
-        <meta class="swiftype" name="image" data-type="enum" content="http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/image-1.png" />
+        <meta property="og:image" content="http://liuhongdan222.github.io/2017/12/07/在angular4实现将图片转成base64/image.png"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://liuhongdan222.github.io/2017/12/07/在angular4实现将图片转成base64/image.png" />
     
     
     
@@ -200,14 +200,14 @@
         <div class="post-header main-content-wrap text-center">
     
         <h1 class="post-title" itemprop="headline">
-            解决angular4发布部署后刷新出现无法访问的问题
+            在angular4中实现将图片转成base64
         </h1>
     
     
         <div class="post-meta">
-    <time itemprop="datePublished" datetime="2017-11-21T17:36:34+08:00">
+    <time itemprop="datePublished" datetime="2017-12-07T15:44:13+08:00">
 	
-		    11月 21, 2017
+		    12月 07, 2017
     	
     </time>
     
@@ -224,10 +224,15 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <!-- excerpt --></p>
-<h2 id="出现的问题"><a href="#出现的问题" class="headerlink" title="出现的问题"></a>出现的问题</h2><p>访问一个页面之后，刷新就会出现以下问题：<br><img src="image-1.png" alt=""></p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>在app.module.ts文件下修改读取url的策略，更改为使用Hash策略(HashLocationStrategy)，之前使用的是HTML5策略(PathLocationStrategy)，所以不行。</p>
-<figure class="codeblock codeblock--tabbed"><figcaption><span>app.module.ts</span><ul class="tabs"><li class="tab active">ts</li></ul></figcaption><div class="tabs-content"><figure class="highlight ts" style="display: block;"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> {LocationStrategy, HashLocationStrategy} <span class="keyword">from</span> <span class="string">'@angular/common'</span>;</span><br><span class="line"></span><br><span class="line">providers: [</span><br><span class="line">    { provide: LocationStrategy, useClass: HashLocationStrategy }</span><br><span class="line">  ]</span><br></pre></td></tr></tbody></table></figure></div></figure>
+            <p>在做项目的时候我们需要从本地选择图片，并将图片显示，这次我就教用angular4怎么来实现。<br><a id="more"></a></p>
+<h2 id="一、建立指令"><a href="#一、建立指令" class="headerlink" title="一、建立指令"></a>一、建立指令</h2><p>将图片转换成base64的代码准备写成一个指令。首先新建img-select-to-base.directive.ts，主要代码如下：</p>
+<figure class="codeblock codeblock--tabbed"><figcaption><span>img-select-to-base.directive.ts</span><ul class="tabs"><li class="tab active">ts</li></ul></figcaption><div class="tabs-content"><figure class="highlight ts" style="display: block;"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> {Directive, ElementRef, HostListener, Output, EventEmitter} <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 图片选择转换成base64</span><br><span class="line"> */</span></span><br><span class="line"><span class="meta">@Directive</span>({</span><br><span class="line">  selector: <span class="string">'[c-img-select-to-base]'</span></span><br><span class="line">})</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> ImgSelectToBaseDirective {</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Output</span>()</span><br><span class="line">  onLoad = <span class="keyword">new</span> EventEmitter();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"><span class="keyword">private</span> elementRef: ElementRef</span>) {</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="meta">@HostListener</span>(<span class="string">'change'</span>)</span><br><span class="line">  <span class="keyword">public</span> onChange(): <span class="built_in">any</span> {</span><br><span class="line">    <span class="keyword">let</span> files = <span class="keyword">this</span>.elementRef.nativeElement.files;</span><br><span class="line">    <span class="keyword">if</span> (files &amp;&amp; files.length &gt; <span class="number">0</span>) {</span><br><span class="line">      <span class="keyword">let</span> file: File = files[<span class="number">0</span>];</span><br><span class="line">      <span class="keyword">let</span> myReader: FileReader = <span class="keyword">new</span> FileReader();</span><br><span class="line">      myReader.onloadend = <span class="function">(<span class="params">loadEvent: <span class="built_in">any</span></span>) =&gt;</span> {</span><br><span class="line">        <span class="keyword">this</span>.onLoad.emit(loadEvent.target.result);</span><br><span class="line">      };</span><br><span class="line">      myReader.readAsDataURL(file);</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></div></figure>
+<h2 id="二、生成模块"><a href="#二、生成模块" class="headerlink" title="二、生成模块"></a>二、生成模块</h2><p>新建img-select.module.ts文件，与上面的指令放到img-select文件夹下，方便管理。将图片转换成base64的代码生成一个模块，在需要使用的地方只需要引入这个模块就行了。主要代码如下：</p>
+<figure class="codeblock codeblock--tabbed"><figcaption><span>img-select.module.ts</span><ul class="tabs"><li class="tab active">ts</li></ul></figcaption><div class="tabs-content"><figure class="highlight ts" style="display: block;"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> {NgModule} <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> {CommonModule} <span class="keyword">from</span> <span class="string">'@angular/common'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> {ImgSelectToBaseDirective} <span class="keyword">from</span> <span class="string">'./img-select-to-base.directive'</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> *  图片选择模块</span><br><span class="line"> */</span></span><br><span class="line"><span class="meta">@NgModule</span>({</span><br><span class="line">  imports: [</span><br><span class="line">    CommonModule</span><br><span class="line">  ],</span><br><span class="line">  declarations: [</span><br><span class="line">    ImgSelectToBaseDirective</span><br><span class="line">  ],</span><br><span class="line">  exports: [</span><br><span class="line">    ImgSelectToBaseDirective</span><br><span class="line">  ]</span><br><span class="line">})</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> ImgSelectModule {</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></div></figure>
+<h2 id="三、使用"><a href="#三、使用" class="headerlink" title="三、使用"></a>三、使用</h2><h4 id="1、引入模块"><a href="#1、引入模块" class="headerlink" title="1、引入模块"></a>1、引入模块</h4><p>在需要使用的地方首先要引入这个模块，或者你直接全局引入也是可以的。<br><figure class="codeblock codeblock--tabbed"><figcaption><span>bank-list.component.ts</span><ul class="tabs"><li class="tab active">ts</li></ul></figcaption><div class="tabs-content"><figure class="highlight ts" style="display: block;"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> {ImgSelectModule} <span class="keyword">from</span> <span class="string">'../../../shared/components/img-select/img-select.module'</span>;</span><br><span class="line"><span class="meta">@NgModule</span>({</span><br><span class="line">  imports: [</span><br><span class="line">    CommonModule,</span><br><span class="line">    BankListRoutingModule,</span><br><span class="line">    ImgSelectModule</span><br><span class="line">  ],</span><br><span class="line">  declarations: [BankListComponent]</span><br><span class="line">})</span><br></pre></td></tr></tbody></table></figure></div></figure></p>
+<h4 id="2、在html中使用"><a href="#2、在html中使用" class="headerlink" title="2、在html中使用"></a>2、在html中使用</h4><figure class="codeblock codeblock--tabbed"><figcaption><span>bank-list.component.html</span><ul class="tabs"><li class="tab active">html</li><li class="tab">ts</li></ul></figcaption><div class="tabs-content"><figure class="highlight html" style="display: block;"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-lg-12"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-success"</span>&gt;</span>浏览图片<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"image-input"</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">id</span>=<span class="string">"logo"</span> <span class="attr">name</span>=<span class="string">"logo"</span></span><br><span class="line">           <span class="attr">c-img-select-to-base</span> (<span class="attr">onLoad</span>)=<span class="string">"addLoad($event)"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-lg-12"</span> *<span class="attr">ngIf</span>=<span class="string">"addImg"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> [<span class="attr">src</span>]=<span class="string">"addImg"</span> <span class="attr">alt</span>=<span class="string">"银行图片"</span> <span class="attr">title</span>=<span class="string">"银行图片"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure><figure class="highlight ts" style="display: none;"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> BankListComponent <span class="keyword">implements</span> OnInit {</span><br><span class="line">    <span class="keyword">public</span> addImg: <span class="built_in">any</span>; <span class="comment">// 添加选择的图片</span></span><br><span class="line">    <span class="comment">// 得到选中的图片</span></span><br><span class="line">    <span class="keyword">public</span> addLoad(img): <span class="built_in">void</span> {</span><br><span class="line">        <span class="keyword">this</span>.addImg = img;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></div></figure>
+<h2 id="四、效果图"><a href="#四、效果图" class="headerlink" title="四、效果图"></a>四、效果图</h2><p><img src="image-1.png" alt=""><br>哈哈哈哈，就是为了放一张胡老师的美照镇楼，哈哈哈哈哈~~~</p>
+
             
         </div>
     </div>
@@ -246,7 +251,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/11/21/字符串的'false'转化为布尔值的false/"  data-tooltip="字符串的&#39;false&#39;转化为布尔值的false">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -254,7 +259,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/11/21/canvas验证码/" data-tooltip="canvas验证码">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/11/24/在angular4中使用canvas/" data-tooltip="在angular4中使用canvas">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -272,7 +277,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/">
+                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://liuhongdan222.github.io/2017/12/07/在angular4实现将图片转成base64/">
                     <i class="fa fa-weibo"></i>
                 </a>
             </li>
@@ -280,7 +285,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/&amp;title=解决angular4发布部署后刷新出现无法访问的问题">
+                <a class="post-action-btn btn btn--default" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://liuhongdan222.github.io/2017/12/07/在angular4实现将图片转成base64/&amp;title=在angular4中实现将图片转成base64">
                     <i class="fa fa-qq"></i>
                 </a>
             </li>
@@ -288,7 +293,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/">
+                <a class="post-action-btn btn btn--default" target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://liuhongdan222.github.io/2017/12/07/在angular4实现将图片转成base64/">
                     <i class="fa fa-star"></i>
                 </a>
             </li>
@@ -326,7 +331,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/11/21/字符串的'false'转化为布尔值的false/"  data-tooltip="字符串的&#39;false&#39;转化为布尔值的false">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -334,7 +339,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/11/21/canvas验证码/" data-tooltip="canvas验证码">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/11/24/在angular4中使用canvas/" data-tooltip="在angular4中使用canvas">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -352,7 +357,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/">
+                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://liuhongdan222.github.io/2017/12/07/在angular4实现将图片转成base64/">
                     <i class="fa fa-weibo"></i>
                 </a>
             </li>
@@ -360,7 +365,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/&amp;title=解决angular4发布部署后刷新出现无法访问的问题">
+                <a class="post-action-btn btn btn--default" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://liuhongdan222.github.io/2017/12/07/在angular4实现将图片转成base64/&amp;title=在angular4中实现将图片转成base64">
                     <i class="fa fa-qq"></i>
                 </a>
             </li>
@@ -368,7 +373,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/">
+                <a class="post-action-btn btn btn--default" target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://liuhongdan222.github.io/2017/12/07/在angular4实现将图片转成base64/">
                     <i class="fa fa-star"></i>
                 </a>
             </li>
@@ -393,7 +398,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/">
+                <a class="share-option-btn" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://liuhongdan222.github.io/2017/12/07/在angular4实现将图片转成base64/">
                     <i class="fa fa-weibo"></i><span>分享到 Weibo</span>
                 </a>
             </li>
@@ -401,7 +406,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/&amp;title=解决angular4发布部署后刷新出现无法访问的问题">
+                <a class="share-option-btn" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://liuhongdan222.github.io/2017/12/07/在angular4实现将图片转成base64/&amp;title=在angular4中实现将图片转成base64">
                     <i class="fa fa-qq"></i><span>分享到 QQ</span>
                 </a>
             </li>
@@ -409,7 +414,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/">
+                <a class="share-option-btn" target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://liuhongdan222.github.io/2017/12/07/在angular4实现将图片转成base64/">
                     <i class="fa fa-star"></i><span>分享到 Qzone</span>
                 </a>
             </li>

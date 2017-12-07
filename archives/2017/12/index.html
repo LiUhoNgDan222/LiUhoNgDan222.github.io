@@ -6,29 +6,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="丹丹的小窝">
-    <title>解决angular4发布部署后刷新出现无法访问的问题 - 丹丹的小窝</title>
+    <title>归档: 2017/12 - 丹丹的小窝</title>
     <meta name="author" content="LiUhoNgDan">
-    
-        <meta name="keywords" content="Angular">
     
     
         <link rel="icon" href="http://liuhongdan222.github.io/assets/images/header.png">
     
     
-    <meta name="description" content="angular4的项目发布部署到服务器之后，刷新会出现页面无法访问的问题。">
-<meta name="keywords" content="Angular">
+    <meta name="description" content="想得多一定没做得多有效，然而不想便做一定没什么效果。">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="解决angular4发布部署后刷新出现无法访问的问题">
-<meta property="og:url" content="http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/index.html">
+<meta property="og:title" content="丹丹的小窝">
+<meta property="og:url" content="http://liuhongdan222.github.io/archives/2017/12/index.html">
 <meta property="og:site_name" content="丹丹的小窝">
-<meta property="og:description" content="angular4的项目发布部署到服务器之后，刷新会出现页面无法访问的问题。">
+<meta property="og:description" content="想得多一定没做得多有效，然而不想便做一定没什么效果。">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:image" content="http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/image-1.png">
-<meta property="og:updated_time" content="2017-11-21T09:36:34.984Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="解决angular4发布部署后刷新出现无法访问的问题">
-<meta name="twitter:description" content="angular4的项目发布部署到服务器之后，刷新会出现页面无法访问的问题。">
-<meta name="twitter:image" content="http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/image-1.png">
+<meta name="twitter:title" content="丹丹的小窝">
+<meta name="twitter:description" content="想得多一定没做得多有效，然而不想便做一定没什么效果。">
     
     
         
@@ -36,9 +30,6 @@
     
         <meta property="og:image" content="http://liuhongdan222.github.io/assets/images/header.png"/>
     
-    
-        <meta property="og:image" content="http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/image-1.png"/>
-        <meta class="swiftype" name="image" data-type="enum" content="http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/image-1.png" />
     
     
     
@@ -60,7 +51,7 @@
         
     
 
-<header id="header" data-behavior="4">
+<header id="header" data-behavior="1">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <div class="header-title">
         <a class="header-title-link" href="/ ">丹丹的小窝</a>
@@ -84,7 +75,7 @@
         
     
 
-<nav id="sidebar" data-behavior="4">
+<nav id="sidebar" data-behavior="1">
     <div class="sidebar-container">
         
             <div class="sidebar-profile">
@@ -189,25 +180,29 @@
 </nav>
 
             
-            <div id="main" data-behavior="4"
+            <div id="main" data-behavior="1"
                  class="
-                        hasCoverMetaOut
+                        hasCoverMetaIn
                         ">
                 
-<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    <section class="postShorten-group main-content-wrap">
     
     
-        <div class="post-header main-content-wrap text-center">
-    
-        <h1 class="post-title" itemprop="headline">
-            解决angular4发布部署后刷新出现无法访问的问题
-        </h1>
-    
-    
-        <div class="post-meta">
-    <time itemprop="datePublished" datetime="2017-11-21T17:36:34+08:00">
+    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/2017/12/07/在angular4实现将图片转成base64/">
+                            在angular4中实现将图片转成base64
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2017-12-07T15:44:13+08:00">
 	
-		    11月 21, 2017
+		    12月 07, 2017
     	
     </time>
     
@@ -219,96 +214,38 @@
     
 </div>
 
-    
-</div>
-    
-    <div class="post-content markdown" itemprop="articleBody">
-        <div class="main-content-wrap">
-            <!-- excerpt --></p>
-<h2 id="出现的问题"><a href="#出现的问题" class="headerlink" title="出现的问题"></a>出现的问题</h2><p>访问一个页面之后，刷新就会出现以下问题：<br><img src="image-1.png" alt=""></p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>在app.module.ts文件下修改读取url的策略，更改为使用Hash策略(HashLocationStrategy)，之前使用的是HTML5策略(PathLocationStrategy)，所以不行。</p>
-<figure class="codeblock codeblock--tabbed"><figcaption><span>app.module.ts</span><ul class="tabs"><li class="tab active">ts</li></ul></figcaption><div class="tabs-content"><figure class="highlight ts" style="display: block;"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> {LocationStrategy, HashLocationStrategy} <span class="keyword">from</span> <span class="string">'@angular/common'</span>;</span><br><span class="line"></span><br><span class="line">providers: [</span><br><span class="line">    { provide: LocationStrategy, useClass: HashLocationStrategy }</span><br><span class="line">  ]</span><br></pre></td></tr></tbody></table></figure></div></figure>
+            </div>
+            
+                <div class="postShorten-excerpt" itemprop="articleBody">
+                    <p>在做项目的时候我们需要从本地选择图片，并将图片显示，这次我就教用angular4怎么来实现。<br>
+                    
+                        <a href="/2017/12/07/在angular4实现将图片转成base64/" class="postShorten-excerpt_link link">
+                            阅读全文
+                        </a>
+                        
+                    
+                </div>
             
         </div>
-    </div>
-    <div id="post-footer" class="post-footer main-content-wrap">
         
-            <div class="post-footer-tags">
-                <span class="text-color-light text-small">标签</span><br/>
-                
-    <a class="tag tag--primary tag--small t-link" href="/tags/Angular/">Angular</a>
-
-            </div>
-        
-        
-            <div class="post-actions-wrap">
-    <nav>
-        <ul class="post-actions post-action-nav">
-            <li class="post-action">
-                
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/11/21/字符串的'false'转化为布尔值的false/"  data-tooltip="字符串的&#39;false&#39;转化为布尔值的false">
-                
-                    <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
-                </a>
-            </li>
-            <li class="post-action">
-                
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/11/21/canvas验证码/" data-tooltip="canvas验证码">
-                
-                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
-                    <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-        </ul>
-    </nav>
-    <ul class="post-actions post-action-share">
-        <li class="post-action hide-lg hide-md hide-sm">
-            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
-                <i class="fa fa-share-alt"></i>
+            <a href="/2017/12/07/在angular4实现将图片转成base64/">
+                <div class="postShorten-thumbnailimg">
+                    <img alt="" itemprop="image" src="http://liuhongdan222.github.io/2017/12/07/在angular4实现将图片转成base64/image.png"/>
+                </div>
             </a>
-        </li>
+            
         
-            
-            
-            <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/">
-                    <i class="fa fa-weibo"></i>
-                </a>
-            </li>
-        
-            
-            
-            <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/&amp;title=解决angular4发布部署后刷新出现无法访问的问题">
-                    <i class="fa fa-qq"></i>
-                </a>
-            </li>
-        
-            
-            
-            <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/">
-                    <i class="fa fa-star"></i>
-                </a>
-            </li>
+    </article>
+    
+    <div class="pagination-bar">
+    <ul class="pagination">
         
         
-        <li class="post-action">
-            
-                <a class="post-action-btn btn btn--default" href="#">
-            
-                <i class="fa fa-list"></i>
-            </a>
-        </li>
+        <li class="pagination-number">第 1 页 共 1 页</li>
     </ul>
 </div>
 
-
-        
-        
-    </div>
-</article>
+</section>
 
 
 
@@ -319,104 +256,6 @@
 </footer>
 
             </div>
-            
-                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
-                    <div class="post-actions-wrap">
-    <nav>
-        <ul class="post-actions post-action-nav">
-            <li class="post-action">
-                
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/11/21/字符串的'false'转化为布尔值的false/"  data-tooltip="字符串的&#39;false&#39;转化为布尔值的false">
-                
-                    <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
-                </a>
-            </li>
-            <li class="post-action">
-                
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/11/21/canvas验证码/" data-tooltip="canvas验证码">
-                
-                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
-                    <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-        </ul>
-    </nav>
-    <ul class="post-actions post-action-share">
-        <li class="post-action hide-lg hide-md hide-sm">
-            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
-                <i class="fa fa-share-alt"></i>
-            </a>
-        </li>
-        
-            
-            
-            <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/">
-                    <i class="fa fa-weibo"></i>
-                </a>
-            </li>
-        
-            
-            
-            <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/&amp;title=解决angular4发布部署后刷新出现无法访问的问题">
-                    <i class="fa fa-qq"></i>
-                </a>
-            </li>
-        
-            
-            
-            <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/">
-                    <i class="fa fa-star"></i>
-                </a>
-            </li>
-        
-        
-        <li class="post-action">
-            
-                <a class="post-action-btn btn btn--default" href="#">
-            
-                <i class="fa fa-list"></i>
-            </a>
-        </li>
-    </ul>
-</div>
-
-
-                </div>
-                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
-    <i id="btn-close-shareoptions" class="fa fa-close"></i>
-    <ul class="share-options">
-        
-            
-            
-            <li class="share-option">
-                <a class="share-option-btn" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/">
-                    <i class="fa fa-weibo"></i><span>分享到 Weibo</span>
-                </a>
-            </li>
-        
-            
-            
-            <li class="share-option">
-                <a class="share-option-btn" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/&amp;title=解决angular4发布部署后刷新出现无法访问的问题">
-                    <i class="fa fa-qq"></i><span>分享到 QQ</span>
-                </a>
-            </li>
-        
-            
-            
-            <li class="share-option">
-                <a class="share-option-btn" target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://liuhongdan222.github.io/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/">
-                    <i class="fa fa-star"></i><span>分享到 Qzone</span>
-                </a>
-            </li>
-        
-    </ul>
-</div>
-
             
         </div>
         
