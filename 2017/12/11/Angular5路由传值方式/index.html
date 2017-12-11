@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="丹丹的小窝">
 <meta property="og:description" content="目前Angular已经升级到了稳定版本Angular5，在这次升级中也对路由有一些改变。现在对于路由传值进行详解,首先一种方式是官网的导航到详情的单值id传入,另一种是多数据传入!">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2017-12-11T03:21:49.749Z">
+<meta property="og:updated_time" content="2017-12-11T03:37:38.054Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Angular5路由传值方式">
 <meta name="twitter:description" content="目前Angular已经升级到了稳定版本Angular5，在这次升级中也对路由有一些改变。现在对于路由传值进行详解,首先一种方式是官网的导航到详情的单值id传入,另一种是多数据传入!">
@@ -203,7 +203,7 @@
     
     
         <div class="post-meta">
-    <time itemprop="datePublished" datetime="2017-12-11T11:21:49+08:00">
+    <time itemprop="datePublished" datetime="2017-12-11T11:37:38+08:00">
 	
 		    12月 11, 2017
     	
@@ -232,7 +232,7 @@
 <blockquote>
 <p>其实这种方式不需要配置路由!你只需要传入和取到数据就可以了!</p>
 </blockquote>
-<p>获取参数也只需要把params改成queryParams就可以了<br><figure class="codeblock codeblock--tabbed"><figcaption><span>list-detail.component.html</span><ul class="tabs"><li class="tab active">ts</li></ul></figcaption><div class="tabs-content"><figure class="highlight ts" style="display: block;"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">ngOnInit() {</span><br><span class="line">    <span class="keyword">this</span>.route.queryParams</span><br><span class="line">      .subscribe(<span class="function">(<span class="params">params: Params</span>) =&gt;</span> {</span><br><span class="line">        <span class="keyword">this</span>.id = params[<span class="string">'id'</span>];</span><br><span class="line">        <span class="keyword">this</span>.state = params[<span class="string">'state'</span>];</span><br><span class="line">        <span class="built_in">console</span>.log(params)</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.id);</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.state);</span><br><span class="line"></span><br><span class="line">      });</span><br><span class="line">  }</span><br></pre></td></tr></tbody></table></figure></div></figure></p>
+<p>获取参数也只需要把params改成queryParams就可以了<br><figure class="codeblock codeblock--tabbed"><figcaption><span>list-detail.component.html</span><ul class="tabs"><li class="tab active">ts</li></ul></figcaption><div class="tabs-content"><figure class="highlight ts" style="display: block;"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ngOnInit() {</span><br><span class="line">    <span class="keyword">this</span>.route.queryParams</span><br><span class="line">      .subscribe(<span class="function">(<span class="params">params: Params</span>) =&gt;</span> {</span><br><span class="line">        <span class="keyword">this</span>.id = params[<span class="string">'id'</span>];</span><br><span class="line">        <span class="keyword">this</span>.state = params[<span class="string">'state'</span>];</span><br><span class="line">        <span class="built_in">console</span>.log(params)</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.id);</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.state);</span><br><span class="line">      });</span><br><span class="line">  }</span><br></pre></td></tr></tbody></table></figure></div></figure></p>
 
             
         </div>
