@@ -15,18 +15,18 @@
         <link rel="icon" href="http://liuhongdan222.github.io/assets/images/header.png">
     
     
-    <meta name="description" content="目前Angular已经升级到了稳定版本Angular5，在这次升级中也对路由有一些改变。现在对于路由传值进行详解,首先一种方式是官网的导航到详情的单值id传入,">
+    <meta name="description" content="目前Angular已经升级到了稳定版本Angular5，在这次升级中也对路由有一些改变。现在对于路由传值进行详解,首先一种方式是官网的导航到详情的单值id传入,另一种是多数据传入!">
 <meta name="keywords" content="Angular">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Angular5路由传值方式">
 <meta property="og:url" content="http://liuhongdan222.github.io/2017/12/11/Angular5路由传值方式/index.html">
 <meta property="og:site_name" content="丹丹的小窝">
-<meta property="og:description" content="目前Angular已经升级到了稳定版本Angular5，在这次升级中也对路由有一些改变。现在对于路由传值进行详解,首先一种方式是官网的导航到详情的单值id传入,">
+<meta property="og:description" content="目前Angular已经升级到了稳定版本Angular5，在这次升级中也对路由有一些改变。现在对于路由传值进行详解,首先一种方式是官网的导航到详情的单值id传入,另一种是多数据传入!">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2017-12-11T03:50:16.208Z">
+<meta property="og:updated_time" content="2017-12-11T03:51:51.356Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Angular5路由传值方式">
-<meta name="twitter:description" content="目前Angular已经升级到了稳定版本Angular5，在这次升级中也对路由有一些改变。现在对于路由传值进行详解,首先一种方式是官网的导航到详情的单值id传入,">
+<meta name="twitter:description" content="目前Angular已经升级到了稳定版本Angular5，在这次升级中也对路由有一些改变。现在对于路由传值进行详解,首先一种方式是官网的导航到详情的单值id传入,另一种是多数据传入!">
     
     
         
@@ -203,7 +203,7 @@
     
     
         <div class="post-meta">
-    <time itemprop="datePublished" datetime="2017-12-11T11:50:16+08:00">
+    <time itemprop="datePublished" datetime="2017-12-11T11:51:51+08:00">
 	
 		    12月 11, 2017
     	
@@ -222,7 +222,7 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>目前Angular已经升级到了稳定版本Angular5，在这次升级中也对路由有一些改变。现在对于路由传值进行详解,首先一种方式是官网的导航到详情的单值id传入,<br><a id="more"></a>另一种是多数据传入!</p>
+            <p>目前Angular已经升级到了稳定版本Angular5，在这次升级中也对路由有一些改变。现在对于路由传值进行详解,首先一种方式是官网的导航到详情的单值id传入,另一种是多数据传入!<br><a id="more"></a></p>
 <h2 id="一、单值传入"><a href="#一、单值传入" class="headerlink" title="一、单值传入"></a>一、单值传入</h2><p>以前跳转页面的时候，如果要传递参数都是在ts文件里写，现在可以直接在html页面直接传递参数。<br><figure class="codeblock codeblock--tabbed"><figcaption><span>list.component.html</span><ul class="tabs"><li class="tab active">html</li></ul></figcaption><div class="tabs-content"><figure class="highlight html" style="display: block;"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> *<span class="attr">ngFor</span>=<span class="string">"let item of items"</span> [<span class="attr">routerLink</span>]=<span class="string">"['/listDetail',item.id]"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure></div></figure></p>
 <p>然后是配置路由:(单值传入的方式需要在详情组件路由配置)<br><figure class="codeblock codeblock--tabbed"><figcaption><span>list.routing.module.ts</span><ul class="tabs"><li class="tab active">ts</li></ul></figcaption><div class="tabs-content"><figure class="highlight ts" style="display: block;"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">{</span><br><span class="line">    path:<span class="string">'listDetail/:id'</span>,  <span class="comment">// :后面就是传递的参数</span></span><br><span class="line">    component:ListDetailComponent</span><br><span class="line">},</span><br></pre></td></tr></tbody></table></figure></div></figure></p>
 <p>传入后就是取到参数,在详情组件的ngOnInit生命周期获取参数</p>
@@ -651,7 +651,7 @@
                                 
                             </span>
                         </span>
-                        <div class="media-content hide-xs font-merryweather"><p>目前Angular已经升级到了稳定版本Angular5，在这次升级中也对路由有一些改变。现在对于路由传值进行详解,首先一种方式是官网的导航到详情的单值id传入,<br></div>
+                        <div class="media-content hide-xs font-merryweather"><p>目前Angular已经升级到了稳定版本Angular5，在这次升级中也对路由有一些改变。现在对于路由传值进行详解,首先一种方式是官网的导航到详情的单值id传入,另一种是多数据传入!<br></div>
                     </div>
                     <div style="clear:both;"></div>
                     <hr>
