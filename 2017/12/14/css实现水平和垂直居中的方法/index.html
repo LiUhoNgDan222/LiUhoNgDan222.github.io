@@ -6,29 +6,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="丹丹的小窝">
-    <title>canvas验证码 - 丹丹的小窝</title>
+    <title>css实现水平和垂直居中的方法 - 丹丹的小窝</title>
     <meta name="author" content="LiUhoNgDan">
     
-        <meta name="keywords" content="javascript,canvas">
+        <meta name="keywords" content="css">
     
     
         <link rel="icon" href="http://liuhongdan222.github.io/assets/images/header.png">
     
     
-    <meta name="description" content="这是一个用canvas加js写的验证码，可以生成随机颜色的干扰线，你可以改变验证码的颜色，如果你想要将线改成圆点，欢迎修改~">
-<meta name="keywords" content="javascript,canvas">
+    <meta name="description" content="在写页面的时候经常会用到水平和垂直居中，实现有很多种方法，下面将为大家一一介绍。">
+<meta name="keywords" content="css">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="canvas验证码">
-<meta property="og:url" content="http://liuhongdan222.github.io/2017/11/21/canvas验证码/index.html">
+<meta property="og:title" content="css实现水平和垂直居中的方法">
+<meta property="og:url" content="http://liuhongdan222.github.io/2017/12/14/css实现水平和垂直居中的方法/index.html">
 <meta property="og:site_name" content="丹丹的小窝">
-<meta property="og:description" content="这是一个用canvas加js写的验证码，可以生成随机颜色的干扰线，你可以改变验证码的颜色，如果你想要将线改成圆点，欢迎修改~">
+<meta property="og:description" content="在写页面的时候经常会用到水平和垂直居中，实现有很多种方法，下面将为大家一一介绍。">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:image" content="http://liuhongdan222.github.io/2017/11/21/canvas验证码/image-1.png">
-<meta property="og:updated_time" content="2017-11-21T09:33:58.582Z">
+<meta property="og:updated_time" content="2017-12-14T03:48:02.005Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="canvas验证码">
-<meta name="twitter:description" content="这是一个用canvas加js写的验证码，可以生成随机颜色的干扰线，你可以改变验证码的颜色，如果你想要将线改成圆点，欢迎修改~">
-<meta name="twitter:image" content="http://liuhongdan222.github.io/2017/11/21/canvas验证码/image-1.png">
+<meta name="twitter:title" content="css实现水平和垂直居中的方法">
+<meta name="twitter:description" content="在写页面的时候经常会用到水平和垂直居中，实现有很多种方法，下面将为大家一一介绍。">
     
     
         
@@ -37,8 +35,8 @@
         <meta property="og:image" content="http://liuhongdan222.github.io/assets/images/header.png"/>
     
     
-        <meta property="og:image" content="http://liuhongdan222.github.io/2017/11/21/canvas验证码/image.png"/>
-        <meta class="swiftype" name="image" data-type="enum" content="http://liuhongdan222.github.io/2017/11/21/canvas验证码/image.png" />
+        <meta property="og:image" content="http://liuhongdan222.github.io/2017/12/14/css实现水平和垂直居中的方法/image.png"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://liuhongdan222.github.io/2017/12/14/css实现水平和垂直居中的方法/image.png" />
     
     
     
@@ -200,20 +198,20 @@
         <div class="post-header main-content-wrap text-center">
     
         <h1 class="post-title" itemprop="headline">
-            canvas验证码
+            css实现水平和垂直居中的方法
         </h1>
     
     
         <div class="post-meta">
-    <time itemprop="datePublished" datetime="2017-11-21T17:33:58+08:00">
+    <time itemprop="datePublished" datetime="2017-12-14T11:48:02+08:00">
 	
-		    11月 21, 2017
+		    12月 14, 2017
     	
     </time>
     
         <span>发布在 </span>
         
-    <a class="category-link" href="/categories/javascript/">javascript</a>
+    <a class="category-link" href="/categories/css/">css</a>
 
 
     
@@ -224,10 +222,18 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>这是一个用canvas加js写的验证码，可以生成随机颜色的干扰线，你可以改变验证码的颜色，如果你想要将线改成圆点，欢迎修改~<br><a id="more"></a></p>
-<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图:"></a>效果图:</h2><p>什么都不说了，先上效果图，有图才有真相。<br><img src="image-1.png" alt=""></p>
-<h2 id="html代码"><a href="#html代码" class="headerlink" title="html代码:"></a>html代码:</h2><p>canvas必须要设置他的高宽。<br><figure class="codeblock codeblock--tabbed"><figcaption><span>html</span><ul class="tabs"><li class="tab active">html</li></ul></figcaption><div class="tabs-content"><figure class="highlight html" style="display: block;"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"checkCode"</span> <span class="attr">width</span>=<span class="string">"70"</span> <span class="attr">height</span>=<span class="string">"35"</span> <span class="attr">onclick</span>=<span class="string">"clickChange()"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure></div></figure></p>
-<h2 id="js代码："><a href="#js代码：" class="headerlink" title="js代码："></a>js代码：</h2><figure class="codeblock codeblock--tabbed"><figcaption><span>js</span><ul class="tabs"><li class="tab active">js</li></ul></figcaption><div class="tabs-content"><figure class="highlight js" style="display: block;"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">    clickChange();</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> code ; <span class="comment">//在全局定义验证码</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createCode</span>(<span class="params"></span>)</span>{</span><br><span class="line">    code = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">var</span> codeLength = <span class="number">4</span>;<span class="comment">//验证码的长度</span></span><br><span class="line">    <span class="keyword">var</span> checkCode = <span class="built_in">document</span>.getElementById(<span class="string">'checkCode'</span>);</span><br><span class="line">    <span class="keyword">var</span> random = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>,</span><br><span class="line">        <span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'d'</span>,<span class="string">'e'</span>,<span class="string">'f'</span>,<span class="string">'g'</span>,<span class="string">'h'</span>,<span class="string">'i'</span>,<span class="string">'j'</span>,<span class="string">'k'</span>,<span class="string">'l'</span>,<span class="string">'m'</span>,</span><br><span class="line">        <span class="string">'n'</span>,<span class="string">'o'</span>,<span class="string">'p'</span>,<span class="string">'q'</span>,<span class="string">'r'</span>,<span class="string">'s'</span>,<span class="string">'t'</span>,<span class="string">'u'</span>,<span class="string">'v'</span>,<span class="string">'w'</span>,<span class="string">'x'</span>,<span class="string">'y'</span>,<span class="string">'z'</span>,</span><br><span class="line">        <span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>, <span class="string">'D'</span>, <span class="string">'E'</span>, <span class="string">'F'</span>, <span class="string">'G'</span>, <span class="string">'H'</span>, <span class="string">'I'</span>, <span class="string">'J'</span>, <span class="string">'K'</span>,</span><br><span class="line">        <span class="string">'L'</span>, <span class="string">'M'</span>, <span class="string">'N'</span>, <span class="string">'O'</span>, <span class="string">'P'</span>, <span class="string">'Q'</span>, <span class="string">'R'</span>, <span class="string">'S'</span>, <span class="string">'T'</span>, <span class="string">'U'</span>, <span class="string">'V'</span>,</span><br><span class="line">        <span class="string">'W'</span>, <span class="string">'X'</span>, <span class="string">'Y'</span>, <span class="string">'Z'</span>);  <span class="comment">//所有候选组成验证码的字符，当然也可以用中文的</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; codeLength; i++) { <span class="comment">//循环操作</span></span><br><span class="line">        <span class="keyword">var</span> index = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*<span class="number">52</span>); <span class="comment">//取得随机数的索引（0~51）</span></span><br><span class="line">        code += random[index]; <span class="comment">//根据索引取得随机数加到code上</span></span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> code;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">/*干扰线的随机x坐标值*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">lineX</span>(<span class="params"></span>)</span>{</span><br><span class="line">    <span class="keyword">var</span> ranLineX=<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*<span class="number">70</span>);</span><br><span class="line">    <span class="keyword">return</span> ranLineX;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">/*干扰线的随机y坐标值*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">lineY</span>(<span class="params"></span>)</span>{</span><br><span class="line">    <span class="keyword">var</span> ranLineY=<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*<span class="number">35</span>);</span><br><span class="line">    <span class="keyword">return</span> ranLineY;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// 生成随机颜色</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">rgb</span>(<span class="params"></span>)</span>{</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span>  <span class="string">'#'</span> +</span><br><span class="line">    (<span class="function"><span class="keyword">function</span>(<span class="params">color</span>)</span>{</span><br><span class="line">    <span class="keyword">return</span> (color +=  <span class="string">'0123456789abcdef'</span>[<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*<span class="number">16</span>)])</span><br><span class="line">      &amp;&amp; (color.length == <span class="number">6</span>) ?  color : <span class="built_in">arguments</span>.callee(color);</span><br><span class="line">  })(<span class="string">''</span>);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clickChange</span>(<span class="params"></span>)</span>{</span><br><span class="line">    <span class="keyword">var</span> mycanvas=<span class="built_in">document</span>.getElementById(<span class="string">'checkCode'</span>);</span><br><span class="line">    <span class="keyword">var</span> cxt=mycanvas.getContext(<span class="string">'2d'</span>);</span><br><span class="line">    cxt.fillStyle=<span class="string">'#cbc7c6'</span>;</span><br><span class="line">    cxt.fillRect(<span class="number">0</span>,<span class="number">0</span>,<span class="number">70</span>,<span class="number">35</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*生成干扰线20条*/</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">0</span>;j&lt;<span class="number">20</span>;j++){</span><br><span class="line">        cxt.strokeStyle=rgb();</span><br><span class="line">        cxt.beginPath();    <span class="comment">//若省略beginPath，则每点击一次验证码会累积干扰线的条数</span></span><br><span class="line">        cxt.moveTo(lineX(),lineY());</span><br><span class="line">        cxt.lineTo(lineX(),lineY());</span><br><span class="line">        cxt.lineWidth=<span class="number">0.5</span>;</span><br><span class="line">        cxt.closePath();</span><br><span class="line">        cxt.stroke();</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    cxt.fillStyle=<span class="string">'#6271a9'</span>;</span><br><span class="line">    cxt.font=<span class="string">'bold 20px Arial'</span>;</span><br><span class="line">    cxt.fillText(createCode(),<span class="number">5</span>,<span class="number">25</span>);   <span class="comment">//把rand()生成的随机数文本填充到canvas中</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></div></figure>
+            <p>在写页面的时候经常会用到水平和垂直居中，实现有很多种方法，下面将为大家一一介绍。<br><a id="more"></a></p>
+<h2 id="1、text-align-line-height实现单行文本水平垂直居中（要设置宽度）"><a href="#1、text-align-line-height实现单行文本水平垂直居中（要设置宽度）" class="headerlink" title="1、text-align + line-height实现单行文本水平垂直居中（要设置宽度）"></a>1、text-align + line-height实现单行文本水平垂直居中（要设置宽度）</h2><figure class="codeblock codeblock--tabbed"><figcaption><span>html</span><ul class="tabs"><li class="tab active">html</li></ul></figcaption><div class="tabs-content"><figure class="highlight html" style="display: block;"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span><br><span class="line">    .test{</span><br><span class="line">        text-align: center;</span><br><span class="line">        line-height: 100px;</span><br><span class="line">    }</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"test"</span> <span class="attr">style</span>=<span class="string">"background-color: lightblue;width: 200px;"</span>&gt;</span>测试文字<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure></div></figure>
+<h2 id="2、用定位来实现"><a href="#2、用定位来实现" class="headerlink" title="2、用定位来实现"></a>2、用定位来实现</h2><p>将left和top都设置为50%，然后将margin-left和margin-top设置成宽高的负1/2。<br><figure class="codeblock codeblock--tabbed"><figcaption><span>css</span><ul class="tabs"><li class="tab active">css</li></ul></figcaption><div class="tabs-content"><figure class="highlight css" style="display: block;"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span><span class="selector-class">.box</span>{</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">400px</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">margin-left</span>: -<span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">margin-top</span>: -<span class="number">200px</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></div></figure></p>
+<p>*兼容性好;<br>缺点:必须知道元素的宽高.</p>
+<h2 id="3、margin-auto"><a href="#3、margin-auto" class="headerlink" title="3、margin:auto"></a>3、margin:auto</h2><p>先把元素变成定位元素，再设置元素的定位位置，距离上、下、左、右都为0，最后设置元素的margin样式值为 auto。<br><figure class="codeblock codeblock--tabbed"><figcaption><span>css</span><ul class="tabs"><li class="tab active">css</li></ul></figcaption><div class="tabs-content"><figure class="highlight css" style="display: block;"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span><span class="selector-class">.box</span>{</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">400px</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">margin</span>: auto;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></div></figure></p>
+<h2 id="4、margin-vertical-align"><a href="#4、margin-vertical-align" class="headerlink" title="4、margin + vertical-align"></a>4、margin + vertical-align</h2><p>要想在父元素中设置vertical-align，须设置为table-cell元素；<br>要想让margin:0 auto实现水平居中的块元素内容撑开宽度，须设置为table元素。<br>而table元素是可以嵌套在tabel-cell元素里面的，就像一个单元格里可以嵌套一个表格</p>
+<p><font color="#f44336">[注意] </font> 若兼容IE7-浏览器，需将结构改为table<br><figure class="codeblock codeblock--tabbed"><figcaption><span>html</span><ul class="tabs"><li class="tab active">html</li></ul></figcaption><div class="tabs-content"><figure class="highlight html" style="display: block;"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span><br><span class="line">    <span class="selector-class">.parent</span>{</span><br><span class="line">        <span class="attribute">display</span>:table-cell;</span><br><span class="line">        <span class="attribute">vertical-align</span>: middle;</span><br><span class="line">    }</span><br><span class="line">    <span class="selector-class">.child</span>{</span><br><span class="line">        <span class="attribute">display</span>: table;</span><br><span class="line">        <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">    }</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"parent"</span> <span class="attr">style</span>=<span class="string">"background-color: lightgray; width:200px; height:100px; "</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"child"</span> <span class="attr">style</span>=<span class="string">"background-color: lightblue;"</span>&gt;</span>测试文字<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure></div></figure></p>
+<h2 id="5、-使用flex"><a href="#5、-使用flex" class="headerlink" title="5、 使用flex"></a>5、 使用flex</h2><p>　　<font color="#f44336">[注意]</font> IE9-浏览器不支持</p>
+<h5 id="【1】在伸缩项目上使用margin-auto"><a href="#【1】在伸缩项目上使用margin-auto" class="headerlink" title="【1】在伸缩项目上使用margin:auto"></a>【1】在伸缩项目上使用margin:auto</h5><figure class="codeblock codeblock--tabbed"><figcaption><span>html</span><ul class="tabs"><li class="tab active">html</li></ul></figcaption><div class="tabs-content"><figure class="highlight html" style="display: block;"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span><br><span class="line">    <span class="selector-class">.parent</span>{</span><br><span class="line">        <span class="attribute">display</span>: flex;</span><br><span class="line">    }</span><br><span class="line">    <span class="selector-class">.child</span>{</span><br><span class="line">        <span class="attribute">margin</span>: auto;</span><br><span class="line">    }</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"parent"</span> <span class="attr">style</span>=<span class="string">"background-color: lightgray; width:200px; height:100px; "</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"child"</span> <span class="attr">style</span>=<span class="string">"background-color: lightblue;"</span>&gt;</span>测试文字<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure></div></figure>
+<h5 id="【2】在伸缩容器上使用主轴对齐justify-content和侧轴对齐align-items"><a href="#【2】在伸缩容器上使用主轴对齐justify-content和侧轴对齐align-items" class="headerlink" title="【2】在伸缩容器上使用主轴对齐justify-content和侧轴对齐align-items"></a>【2】在伸缩容器上使用主轴对齐justify-content和侧轴对齐align-items</h5><figure class="codeblock codeblock--tabbed"><figcaption><span>html</span><ul class="tabs"><li class="tab active">html</li></ul></figcaption><div class="tabs-content"><figure class="highlight html" style="display: block;"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span><br><span class="line">   <span class="selector-class">.parent</span>{</span><br><span class="line">        <span class="attribute">display</span>: flex;</span><br><span class="line">        <span class="attribute">justify-content</span>: center;</span><br><span class="line">        <span class="attribute">align-items</span>: center;</span><br><span class="line">    }</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"parent"</span> <span class="attr">style</span>=<span class="string">"background-color: lightgray; width:200px; height:100px; "</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"child"</span> <span class="attr">style</span>=<span class="string">"background-color: lightblue;"</span>&gt;</span>测试文字<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure></div></figure>
+<h2 id="6、使用translate"><a href="#6、使用translate" class="headerlink" title="6、使用translate"></a>6、使用translate</h2><p>使用translate时，如果知道宽高就可以直接写宽高的负1/2；如果不知道宽高可以直接写-50%，其实也是高宽的1/2的意思，所以建议大家最好用-50%。<br><figure class="codeblock codeblock--tabbed"><figcaption><span>css</span><ul class="tabs"><li class="tab active">css</li></ul></figcaption><div class="tabs-content"><figure class="highlight css" style="display: block;"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.child</span>{</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(-100px,-100px);</span><br><span class="line">    <span class="attribute">-webkit-transform</span>: <span class="built_in">translate</span>(-50%,-50%);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></div></figure></p>
+
             
         </div>
     </div>
@@ -236,7 +242,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">标签</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/canvas/">canvas</a> <a class="tag tag--primary tag--small t-link" href="/tags/javascript/">javascript</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/css/">css</a>
 
             </div>
         
@@ -246,7 +252,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/"  data-tooltip="解决angular4发布部署后刷新出现无法访问的问题">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -254,7 +260,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/12/11/Angular5路由传值方式/" data-tooltip="Angular5路由传值方式">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -272,7 +278,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://liuhongdan222.github.io/2017/11/21/canvas验证码/">
+                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://liuhongdan222.github.io/2017/12/14/css实现水平和垂直居中的方法/">
                     <i class="fa fa-weibo"></i>
                 </a>
             </li>
@@ -280,7 +286,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://liuhongdan222.github.io/2017/11/21/canvas验证码/&amp;title=canvas验证码">
+                <a class="post-action-btn btn btn--default" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://liuhongdan222.github.io/2017/12/14/css实现水平和垂直居中的方法/&amp;title=css实现水平和垂直居中的方法">
                     <i class="fa fa-qq"></i>
                 </a>
             </li>
@@ -288,7 +294,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://liuhongdan222.github.io/2017/11/21/canvas验证码/">
+                <a class="post-action-btn btn btn--default" target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://liuhongdan222.github.io/2017/12/14/css实现水平和垂直居中的方法/">
                     <i class="fa fa-star"></i>
                 </a>
             </li>
@@ -326,7 +332,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/11/21/解决angular4发布部署后刷新出现无法访问的问题/"  data-tooltip="解决angular4发布部署后刷新出现无法访问的问题">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -334,7 +340,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/12/11/Angular5路由传值方式/" data-tooltip="Angular5路由传值方式">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -352,7 +358,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://liuhongdan222.github.io/2017/11/21/canvas验证码/">
+                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://liuhongdan222.github.io/2017/12/14/css实现水平和垂直居中的方法/">
                     <i class="fa fa-weibo"></i>
                 </a>
             </li>
@@ -360,7 +366,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://liuhongdan222.github.io/2017/11/21/canvas验证码/&amp;title=canvas验证码">
+                <a class="post-action-btn btn btn--default" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://liuhongdan222.github.io/2017/12/14/css实现水平和垂直居中的方法/&amp;title=css实现水平和垂直居中的方法">
                     <i class="fa fa-qq"></i>
                 </a>
             </li>
@@ -368,7 +374,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://liuhongdan222.github.io/2017/11/21/canvas验证码/">
+                <a class="post-action-btn btn btn--default" target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://liuhongdan222.github.io/2017/12/14/css实现水平和垂直居中的方法/">
                     <i class="fa fa-star"></i>
                 </a>
             </li>
@@ -393,7 +399,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://liuhongdan222.github.io/2017/11/21/canvas验证码/">
+                <a class="share-option-btn" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://liuhongdan222.github.io/2017/12/14/css实现水平和垂直居中的方法/">
                     <i class="fa fa-weibo"></i><span>分享到 Weibo</span>
                 </a>
             </li>
@@ -401,7 +407,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://liuhongdan222.github.io/2017/11/21/canvas验证码/&amp;title=canvas验证码">
+                <a class="share-option-btn" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://liuhongdan222.github.io/2017/12/14/css实现水平和垂直居中的方法/&amp;title=css实现水平和垂直居中的方法">
                     <i class="fa fa-qq"></i><span>分享到 QQ</span>
                 </a>
             </li>
@@ -409,7 +415,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://liuhongdan222.github.io/2017/11/21/canvas验证码/">
+                <a class="share-option-btn" target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://liuhongdan222.github.io/2017/12/14/css实现水平和垂直居中的方法/">
                     <i class="fa fa-star"></i><span>分享到 Qzone</span>
                 </a>
             </li>
